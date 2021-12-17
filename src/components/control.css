@@ -1,0 +1,22 @@
+.control{
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 2rem;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    font-size: 1.5rem;
+}
+.control__new-game{
+    flex: 0.75;
+}
+.control__final-score{
+    border: 1px solid #000;
+    padding: 1rem 0;
+    text-align: center;
+    
+}
