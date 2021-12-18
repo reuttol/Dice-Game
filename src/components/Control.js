@@ -12,12 +12,19 @@ class Control extends React.Component{
         this.props.getFinalScore(e.target.value);
 
     }
+
+    rollDice = () => {
+        const a = Math.round(Math.random() * 6) + 1;
+        const b = Math.round(Math.random() * 6) + 1;
+        this.props.getDiceRoll(a+b);
+    }
+
     render(){
         return (
             <div className="control">
-                <div className="control__new-game">New Game</div>
-                <div>Roll Dice</div>
-                <div>Hold</div>
+                <button className="control__new-game" onClick={this.props.startNewGame}>New Game</button>
+                <button onClick={this.rollDice}>Roll Dice</button>
+                <button onClick={this.props.handleHold}>Hold</button>
                 {/* {console.log("gg")} */}
                 <div>
                     <input 
