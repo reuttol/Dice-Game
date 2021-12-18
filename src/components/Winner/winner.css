@@ -1,0 +1,14 @@
+.winner-container{
+    position: absolute;
+    width: 100%;
+    top: 35%;    
+    background-color: rgba(128, 128, 128, 0.8);
+    color: #fff;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    font-size: 2rem;
+    font-weight: 400;
+}

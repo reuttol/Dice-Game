@@ -1,0 +1,39 @@
+
+.dice{
+    width: 100px;
+    height: 100px;
+    border-radius: 20%;
+    border:1px solid #000;
+}
+.dice-1{
+    background: url(./images/dice-1.png) no-repeat center center/cover;
+}
+.dice-2{
+    background: url(./images/dice-2.png) no-repeat center center/cover;
+}
+.dice-3{
+    background: url(./images/dice-3.png) no-repeat center center/cover;
+}
+.dice-4{
+    background: url(./images/dice-4.png) no-repeat center center/cover;
+}
+.dice-5{
+    background: url(./images/dice-5.png) no-repeat center center/cover;
+}
+.dice-6{
+    background: url(./images/dice-6.png) no-repeat center center/cover;
+}
+
+@media (max-width: 850px) {
+    .dice{
+        height: 60px;
+        width: 60px;
+    }
+}
+
+@media (max-width: 580px) {
+    .dice{
+        height: 50px;
+        width: 50px;
+    }
+}

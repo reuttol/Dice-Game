@@ -1,12 +1,14 @@
 import React from "react";
-import Player from './Player';
-import Control from './Control';
+import Player from './Player/Player';
+import Control from './Control/Control';
+import Winner from "./Winner/Winner";
 import './app.css'
 
 class App extends React.Component{
 
     state = {finalScore: 20, 
         curPlayer: 1,
+        winner: null,
         players: [
         {
           name: '1',
@@ -37,8 +39,7 @@ class App extends React.Component{
         const tempTotalScore = this.state.players[this.state.curPlayer-1].totalScore;
         
         if(tempCurrentScore + tempTotalScore >= this.state.finalScore){
-            console.log("winner", this.state.curPlayer);
-            //TODO - reset board? || enable new game
+            this.setState({winner: this.state.curPlayer})
         }
         
         tempPlayers[this.state.curPlayer-1].totalScore = tempCurrentScore + tempTotalScore;
@@ -63,12 +64,34 @@ class App extends React.Component{
         this.setState({players: tempPlayers});
     }
 
+    startNewGame = () =>{
+        this.setState({finalScore: 20, 
+            curPlayer: 1,
+            winner: null,
+            players: [
+            {
+              name: '1',
+              totalScore: 0,
+              currentScore: 0
+            },
+            {
+              name: '2',
+              totalScore: 0,
+              currentScore: 0
+            }
+          ],
+        });
+    }
+
     render(){
         return (
             <div className="app">
-                <Player player={this.state.players[0]} getPlayer={this.getPlayerState}/>
-                <Player player={this.state.players[1]} getPlayer={this.getPlayerState}/>
-                <Control getFinalScore={this.setFinalScore} getDiceRoll={this.getDiceRoll} handleHold={this.handleHold}/>
+                <Player id="p1" player={this.state.players[0]} getPlayer={this.getPlayerState} active={`${this.state.curPlayer === 1 ? 'active' : ''}`}/>
+                <Player id="p2" player={this.state.players[1]} getPlayer={this.getPlayerState} active={`${this.state.curPlayer === 2 ? 'active' : ''}`}/>
+                <Control getFinalScore={this.setFinalScore} getDiceRoll={this.getDiceRoll} handleHold={this.handleHold} startNewGame={this.startNewGame} />
+                {
+                    this.state.winner && <Winner winner={this.state.winner} />
+                }
     
             </div>
         )

@@ -1,0 +1,38 @@
+.side-container{
+    width: 100%;
+    height: 100%;
+    background-color: #000;
+}
+.dice{
+    width: 100%;
+    height: 100%;
+    border-radius: 20%;
+    border:1px solid #000;
+}
+.dice-1{
+    background: url(./images/dice-1.png) no-repeat center center/cover red;
+}
+.dice-2{
+    background: url(./images/dice-2.png) no-repeat center center/cover red;
+}
+.dice-3{
+    background: url(./images/dice-3.png) no-repeat center center/cover red;
+}
+.dice-4{
+    background: url(./images/dice-4.png) no-repeat center center/cover red;
+}
+.dice-5{
+    background: url(./images/dice-5.png) no-repeat center center/cover red;
+}
+.dice-6{
+    background: url(./images/dice-6.png) no-repeat center center/cover red;
+}
+.cube-container{
+    animation: rotateCube 3s;
+}
+
+@keyframes rotateCube {
+    to{
+        transform: translate3d(0px, 0px, 50px) rotate3d(0, 1, 0, 0deg)
+    }
+}
